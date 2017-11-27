@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/*CSS Document admin sara*/
+
+
+/*table{
+    border-radius: 7px;
+    box-shadow: 11px 11px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 0px;
+}
+
+.table2{
+    border-radius: 7px;
+    box-shadow: 11px 11px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 0px;
+    margin-left: 48px;
+}
+
+
+th{
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #000249;
+}*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90px;
+    background-color: #222222;
+    text-align: center;
+}
+
+.well{
+  text-align: center;
+  background: #a4addc;
+}
+.breadcrumb{
+  background: #cecccc;
+}
+.panel-danger{
+      border-color: #f7f3f3;
+}
+
+.panel-danger>.panel-heading {
+    color: #232121;
+    background-color: #8795d4;
+    border-color: #ded9da;
+}
+table {
+    background-color: #6c9fdc8c;
+}
+h1{
+  font-family: 'Bubblegum Sans', cursive;
+}
+h2{
+  font-family: 'Bubblegum Sans', cursive;
+}
+h4{
+  font-family: 'Bubblegum Sans', cursive;
+}
+p{
+  font-family: 'Bubblegum Sans', cursive;
+}
+li{
+  font-family: 'Bubblegum Sans', cursive;
+}
+a{
+  font-family: 'Bubblegum Sans', cursive;
+}
+th{
+  font-family: 'Bubblegum Sans', cursive;
+}
+td{
+  font-family: 'Bubblegum Sans', cursive;
+}
+div{
+  font-family: 'Bubblegum Sans', cursive;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #adbdde;
+}
+th{
+  text-align: center;
+}
+td{
+  text-align: center;
+}
+body{
+  background: url(../img/fond.jpg);
+}
+.navbar-inverse {
+    background-color: #1360bb;
+    border-color: #f1ebeb;
+}
+.copy{
+  color: #777;
+}
+.param {
+    margin-bottom: 50px;
+    width: 22%;
+}
+/*.btn-danger{
+    margin-left: 60px;
+}*/
+
+/*.btn-success{
+    margin-left: 60px;*/
+}*/
+
+
+/*h2{
+    font-family: 'Concert One', cursive;
+    margin-left: 797px;
+}
+
+.titre{
+    font-family: 'Concert One', cursive;
+    margin-left: 727px;
+}
+
+.row{
+    margin-left: 712px;
+}*/
+
+
+/*
+.conteneur{
+    margin-left: 641px;
+}
+
+.titre{
+    margin-left: 156px;
+    margin-top: 3px;
+    font-family: 'Concert One', cursive;
+}
+
+.titre2{
+    font-family: 'Concert One', cursive;
+    margin-left: 752px;
+}
+
+.competence{
+    position: absolute;
+    left: 642px;
+    top: 122px;
+}
+
+
+
+form{
+    margin-left: 485px;
+    width: 40%;
+    margin-top: 50px;
+}
+
+fieldset{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+*/
+

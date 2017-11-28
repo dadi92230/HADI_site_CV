@@ -5,23 +5,15 @@ require('../admin/inc/init.inc.php');
 $resultat = $pdo -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1'");
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
-/*recuperation des experiences*/
-$resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='1'");
- $resultat->execute();
+
         
 
 ?>
 
 
 <!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
-
 <head>
-
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
@@ -48,7 +40,6 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
     ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 </head>
 
 <body id="top">
@@ -56,7 +47,7 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
     <!-- header
     ================================================== -->
     <header class="s-header">
-
+        <!-- barre de navigation -->
         <div class="header-logo">
             <a class="site-logo" href="index.html"><img src="images/3283885.png"></a>
         </div>
@@ -65,19 +56,16 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
             <ul class="header-nav">
                 <li class="current"><a class="smoothscroll"  href="#home" title="home">Acceuil</a></li>
                 <li><a class="smoothscroll"  href="#about" title="about">À propos de moi</a></li>
-                <!-- <li><a class="smoothscroll"  href="#works" title="works">Works</a></li> -->
                 <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
             </ul>
         </nav>
 
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
 
-    </header> <!-- end s-header -->
+    </header> <!-- fin du header -->
     
 
-   <!-- home
-   ================================================== -->
+   <!-- Acceuil================================================== -->
    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/20160223152814-f4a40c15.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="overlay"></div>
@@ -111,8 +99,8 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
 
             </div>
 
-        </div> <!-- end home-content -->
-
+        </div>
+        <!-- reseau  -->
         <ul class="home-social">
             <!-- <li>
                 <a href="#"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
@@ -127,20 +115,18 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
                 <a href="#"><i class="im im-pinterest" aria-hidden="true"></i><span>Pinterest</span></a>
             </li>
         </ul> 
-        <!-- end home-social -->
+        <!-- fin reseau -->
+    </section> <!-- Acceuil -->
 
-    </section> <!-- end s-home -->
 
-
-    <!--  À PROPOS DE MOI
-
-    ================================================== -->
+    <!--  À PROPOS DE MOI===================== -->
     <section id="about" class="s-about target-section">
         
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full text-center">
                 <h3>À PROPOS</h3>
                 <h1>Plus à propos de moi</h1>
+                <p>presentation </p>
             </div>
         </div>
         <!-- competences -->
@@ -176,8 +162,10 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
                 </ul>
             </div>
 
-        </div> <!-- end about-content -->
+        </div> <!-- fin competences -->
 
+
+        <!-- bouton CV -->
         <div class="row about-content about-content--buttons">
 
             <div class="col-six tab-full left">
@@ -186,177 +174,51 @@ $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='
             <div class="col-six tab-full right">
                 <a href="#contact" class="btn full-width">ENGAGEZ-MOI MAINTENANT</a>
             </div>
+        </div> <!-- fin de bouton CV -->
 
-        </div> <!-- end about-content buttons -->
-
+            <!-- Experiences -->
         <div class="row about-content about-content--timeline">
-
             <div class="col-full text-center">
                 <h3>Mes Experiences.</h3>
-            </div>
-            <div> <?php while ($ligne_experience = $resultat -> fetch()) { 
-                    echo $ligne_experience['e_dates'];} ?></div>
+
+            <?php /*recuperation des experiences*/
+                $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='1'");
+                 $resultat->execute();?>
+
+
             <div class="col-six tab-full left">
                 <div class="timeline">
+                 <?php while ($ligne_experience = $resultat -> fetch()) { ?>
 
                     <div class="timeline__block">
                         <div class="timeline__bullet"></div>
                         <div class="timeline__header">
-                            <p class="timeline__timeframe">a modifier plus tard</p>
+                            <p class="timeline__timeframe"></p>
                             <h3>Le poleS</h3>
                             <h5>développeur web</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                            <p>agent.</p>
                         </div>
                     </div> <!-- end timeline__block -->
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">janvier 2017 - avril 2017</p>
-                            <h3>3W Academy</h3>
-                            <h5></h5>
-                        </div>
-                        <div class="timeline__desc">	
-                            <p>-Réalisation d'un blog <br/>
-                            - intégration de maquette.<br/>
-                            
-                            </p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
+                <?php } ?>
+                    
                 </div> <!-- end timeline -->
             </div> <!-- end left -->
-
-            <div class="col-six tab-full right">
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Juillet 2012 - Novembre 2016</p>
-                            <h3>LM2S</h3>
-                            <h5>Gestionnaire de stock</h5>
-                        </div>
-                        <div class="timeline__desc">    
-                            <p>- Enregistrer les nouveaux produits dans le logiciel de gestion.<br/>
-                            - Gérer les livraisons.<br/>
-                            - Suivre le bilan mensuel (commandes, factures...).<br/>
-                            - Participation aux tâches générales du service : rangement des zones de travail/stockage/expéditions/réception/inventaires
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">July 2011 - June 2012</p>
-                            <h3>Epic Design Agency</h3>
-                            <h5>Web Designer</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                </div> <!-- end timeline -->
-            </div> <!-- end right -->
-
-        </div> <!-- end about-content timeline -->
+       
 
 
-        <div class="row about-content about-content--timeline">
 
-            <div class="col-full text-center">
-                <h3>Mon Experiences.</h3>
-            </div>
+                   
 
-            <div class="col-six tab-full left">
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">juin 2017 - Present</p>
-                            <h3>Le poleS</h3>
-                            <h5>développeur web</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">janvier 2017 - avril 2017</p>
-                            <h3>3W Academy</h3>
-                            <h5></h5>
-                        </div>
-                        <div class="timeline__desc">    
-                            <p>-Réalisation d'un blog <br/>
-                            - intégration de maquette.<br/>
-                            
-                            </p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                </div> <!-- end timeline -->
-            </div> <!-- end left -->
-
-            <div class="col-six tab-full right">
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Juillet 2012 - Novembre 2016</p>
-                            <h3>LM2S</h3>
-                            <h5>Gestionnaire de stock</h5>
-                        </div>
-                        <div class="timeline__desc">    
-                            <p>- Enregistrer les nouveaux produits dans le logiciel de gestion.<br/>
-                            - Gérer les livraisons.<br/>
-                            - Suivre le bilan mensuel (commandes, factures...).<br/>
-                            - Participation aux tâches générales du service : rangement des zones de travail/stockage/expéditions/réception/inventaires
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">July 2011 - June 2012</p>
-                            <h3>Epic Design Agency</h3>
-                            <h5>Web Designer</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                </div> <!-- end timeline -->
-            </div> <!-- end right -->
-
-        </div> <!-- end about-content timeline -->
-
+            </div> <!-- end timeline -->
+        </div> <!-- end left -->       
     </section> <!-- end about -->
-    
-
-    <!-- works
-    ================================================== -->
-  <!-- <! --> .
 
 
 
-    <!-- testimonials
-    ================================================== -->
 
-   
 
-    <!-- blog
-    ================================================== -->
     <section id="blog" class="s-blog target-section">
 
         <div class="row narrow section-intro has-bottom-sep">

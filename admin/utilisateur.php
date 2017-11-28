@@ -11,7 +11,7 @@ if (isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'connecté') {
 } else { // l'utilisateur n'est pas connecté
   header('location: authentification.php');
 }
-
+/*recuperation des utilisateur*/
 $resultat = $pdo -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur'");
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 

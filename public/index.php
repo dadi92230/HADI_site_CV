@@ -46,8 +46,8 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
     <!-- header
     ================================================== -->
-    <header class="s-header">
-        <!-- barre de navigation -->
+     <header class="s-header">
+
         <div class="header-logo">
             <a class="site-logo" href="index.html"><img src="images/3283885.png"></a>
         </div>
@@ -56,13 +56,16 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
             <ul class="header-nav">
                 <li class="current"><a class="smoothscroll"  href="#home" title="home">Acceuil</a></li>
                 <li><a class="smoothscroll"  href="#about" title="about">À propos de moi</a></li>
+                <!-- <li><a class="smoothscroll"  href="#works" title="works">Works</a></li> -->
                 <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
             </ul>
         </nav>
 
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
 
-    </header> <!-- fin du header -->
+    </header> <!-- end s-header -->
+
     
 
    <!-- Acceuil================================================== -->
@@ -78,7 +81,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <h3>BONJOUR</h3>
 
                 <h1>
-                   <p>
+                   <p class="holder">
                        Je suis <?php echo $ligne_utilisateur['prenom'];?> <?php echo $ligne_utilisateur['nom'];?> . <br>
                    Développeur Intégrateur WEB/ Designer  <br>
                     Basé sur Paris.
@@ -119,6 +122,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     </section> <!-- Acceuil -->
 
 
+   
     <!--  À PROPOS DE MOI===================== -->
     <section id="about" class="s-about target-section">
         
@@ -129,39 +133,29 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <p>presentation </p>
             </div>
         </div>
+
+
         <!-- competences -->
         <div class="row about-content">
             <div class="">
                 <h3>Mes compétences.</h3>
+                 <?php
+                $resultat = $pdo -> prepare("SELECT * FROM t_competences WHERE utilisateur_id ='1'");
+                $resultat->execute();
 
+                /*$ligne_competence = $resultat -> fetch();*/
+                ?>
+                <?php while ($ligne_competence = $resultat -> fetch()) { ?>
+                                                
                 <ul class="skill-bars">
                     <li>
-                    <div class="progress percent90"><span>90%</span></div>
-                    <strong>HTML5</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent85"><span>85%</span></div>
-                    <strong>CSS3</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent90"><span>90%</span></div>
-                    <strong>JavaScipt</strong>
-                    </li>   
-                    <li>
-                    <div class="progress percent70"><span>70%</span></div>
-                    <strong>JQuery</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent95"><span>95%</span></div>
-                    <strong>PHP</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent75"><span>75%</span></div>
-                    <strong>Wordpress</strong>
-                    </li>   
+                    <div class="progress  " style="width:<?= $ligne_competence['c_niveau'];?>%"><span><?= $ligne_competence['c_niveau'];?>%</span>
+                    </div>
+                    <strong><?= $ligne_competence['competence'];?></strong>
+                    </li>    
                 </ul>
+                <?php } ?>
             </div>
-
         </div> <!-- fin competences -->
 
 
@@ -176,7 +170,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
             </div>
         </div> <!-- fin de bouton CV -->
 
-            <!-- Experiences -->
+        <!-- Experiences -->
         <div class="row about-content about-content--timeline">
             <div class="col-full text-center">
                 <h3>Mes Experiences.</h3>
@@ -186,38 +180,66 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                  $resultat->execute();?>
 
 
-            <div class="col-six tab-full left">
-                <div class="timeline">
                  <?php while ($ligne_experience = $resultat -> fetch()) { ?>
+                    <div class="col-six tab-full ">
+                        <div class="timeline">
 
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe"></p>
-                            <h3>Le poleS</h3>
-                            <h5>développeur web</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>agent.</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <p class="timeline__timeframe"><?= $ligne_experience['e_dates'];?></p>
+                                    <h3><?= $ligne_experience['e_titre'];?></h3>
+                                    <h5><?= $ligne_experience['e_soustitre'];?></h5>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p><?= $ligne_experience['e_description'];?>.</p>
+                                </div>
+                            </div> <!-- end timeline__block -->
+                            
+                        </div> <!-- end timeline -->
+                    </div> <!-- end left -->
                 <?php } ?>
-                    
-                </div> <!-- end timeline -->
-            </div> <!-- end left -->
-       
-
-
-
-                   
-
             </div> <!-- end timeline -->
-        </div> <!-- end left -->       
+        </div> <!-- end left -->
+
+        <div class="black">.</div>
+
+
+        <!-- formation -->
+         <div class="row about-content about-content--timeline">
+            <div class="col-full text-center">
+                <h3>Mes Formation.</h3>
+
+            <?php /*recuperation des formation*/
+                $resultat = $pdo -> prepare("SELECT * FROM t_formations WHERE utilisateur_id ='1'");
+                    $resultat->execute();
+                ?>
+
+
+                 <?php while ($ligne_formation = $resultat -> fetch()) { ?>
+                    <div class="col-six tab-full ">
+                        <div class="timeline">
+
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <p class="timeline__timeframe"><?= $ligne_formation['f_dates'];?></p>
+                                    <h3><?= $ligne_formation['f_titre'];?></h3>
+                                    <h5><?= $ligne_formation['f_soustitre'];?></h5>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p><?= $ligne_formation['f_description'];?>.</p>
+                                </div>
+                            </div> <!-- end timeline__block -->
+                            
+                        </div> <!-- end timeline -->
+                    </div> <!-- end left -->
+                <?php } ?>
+            </div> <!-- end timeline -->
+        </div> <!-- end left -->
+        <div class="black">.</div>
     </section> <!-- end about -->
-
-
-
-
+            
 
     <section id="blog" class="s-blog target-section">
 

@@ -1229,9 +1229,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     width: 85%;
 }
 
-.skill-bars li .percent90 {
+/*.skill-bars li .percent90 {
     width: 90%;
-}
+}*/
 
 .skill-bars li .percent95 {
     width: 95%;
@@ -4137,4 +4137,7 @@ article.blog-single .blog-content {
     .commentlist .comment__avatar {
         display: none;
     }
+}
+.black{
+    background-color:black; 
 }

@@ -83,7 +83,7 @@ html, body {
 }
 
 body {
-    background: #0a0809;
+    background: #fbfbfb;
     font-family: "librebaskerville-regular", serif;
     font-size: 1.6rem;
     line-height: 1.875;
@@ -1669,7 +1669,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * header
  * ------------------------------------------------------------------- */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1030px) {
     .header-logo {
         left: 40px;
     }
@@ -1709,7 +1709,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * make sure the menu is visible on larger screens
  * ------------------------------------------------------------------- */
 
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 1030px) {
     .header-nav-wrap {
         display: block !important;
     }
@@ -2197,7 +2197,7 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 
 .s-about {
-    padding-top: 15rem;
+    padding-top: 7rem;
     padding-bottom: 9rem;
     background-color: #FFFFFF;
     position: relative;
@@ -2205,6 +2205,7 @@ html.no-csstransitions .home-content__main {
 
 .about-content {
     margin-bottom: 3rem;
+
 }
 
 .about-content .left {

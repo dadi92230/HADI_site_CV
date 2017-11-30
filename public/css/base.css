@@ -833,10 +833,12 @@ input[type="password"], textarea {
 
 .text-center {
     text-align: center;
+    margin-top: 2rem;
 }
 
 .text-left {
     text-align: left;
+
 }
 
 .text-right {

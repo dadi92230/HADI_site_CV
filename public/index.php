@@ -54,9 +54,11 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li class="current"><a class="smoothscroll"  href="#home" title="home">Acceuil</a></li>
+                <!-- <li class="current"><a class="smoothscroll"  href="#home" title="home">Acceuil</a></li> -->
                 <li><a class="smoothscroll"  href="#about" title="about">À propos de moi</a></li>
-                <!-- <li><a class="smoothscroll"  href="#works" title="works">Works</a></li> -->
+                <li><a class="smoothscroll"  href="#competences" title="competences">COMPETENCES</a></li>
+                <li><a class="smoothscroll"  href="#Experiences" title="Experiences">EXPERIENCES</a></li>
+                <li><a class="smoothscroll"  href="#Formation" title="Formation">FORMATION</a></li>
                 <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
             </ul>
@@ -129,15 +131,18 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full text-center">
                 <h3>À PROPOS</h3>
-                <h1>Plus à propos de moi</h1>
-                <p>presentation </p>
+                <h1>presentation</h1>
+                <!-- <p>presentation </p> -->
             </div>
         </div>
+    </section> <!-- end about -->
+    <div class="black">.</div>
 
 
         <!-- competences -->
-        <div class="row about-content">
-            <div class="">
+    <section id="competences" class="s-competences target-section"> <!-- end about -->
+        <div  class="row ">
+            <div class="col-full text-center">
                 <h3>Mes compétences.</h3>
                  <?php
                 $resultat = $pdo -> prepare("SELECT * FROM t_competences WHERE utilisateur_id ='1'");
@@ -157,8 +162,6 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <?php } ?>
             </div>
         </div> <!-- fin competences -->
-
-
         <!-- bouton CV -->
         <div class="row about-content about-content--buttons">
 
@@ -169,9 +172,14 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <a href="#contact" class="btn full-width">ENGAGEZ-MOI MAINTENANT</a>
             </div>
         </div> <!-- fin de bouton CV -->
+    </section> <!-- end about -->
+    <div class="black">.</div>
+
+
 
         <!-- Experiences -->
-        <div class="row about-content about-content--timeline">
+    <section id="Experiences" class="s-Experiences target-section">
+        <div   class="row about-content about-content--timeline">
             <div class="col-full text-center">
                 <h3>Mes Experiences.</h3>
 
@@ -201,12 +209,13 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <?php } ?>
             </div> <!-- end timeline -->
         </div> <!-- end left -->
-
-        <div class="black">.</div>
+    </section>
+    <div class="black">.</div>
 
 
         <!-- formation -->
-         <div class="row about-content about-content--timeline">
+    <section id="Formation" class="s-Formation target-section">
+         <div  class="row about-content about-content--timeline">
             <div class="col-full text-center">
                 <h3>Mes Formation.</h3>
 
@@ -237,8 +246,9 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <?php } ?>
             </div> <!-- end timeline -->
         </div> <!-- end left -->
-        <div class="black">.</div>
-    </section> <!-- end about -->
+    </section>
+    <div class="black">.</div>
+    
             
 
     <section id="blog" class="s-blog target-section">
@@ -362,7 +372,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     </section> <!-- end s-stats -->
 
 
-    <!-- s-stats
+    <!-- contact
     ================================================== -->
     <section id="contact" class="s-contact target-section">
 

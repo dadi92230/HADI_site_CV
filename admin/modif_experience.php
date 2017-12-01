@@ -41,6 +41,10 @@ $ligne_experience = $resultat->fetch();
         $ligne_utilisateur = $resultat -> fetch();
         ?>
         <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
+
+         <!--CKEditor-->
+        <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -80,8 +84,13 @@ $ligne_experience = $resultat->fetch();
 
                           <div class="form-group">
                             <label for="e_description">Description :</label><br>
-                            <input type="text" name="e_description" value="<?= $ligne_experience['e_description']; ?>"><br><br>
+                            <!-- <input type="text" name="e_description"><br><br> -->
+                            <textarea name="e_description" id="editor1" class="form-control"  value="<?= $ligne_experience['e_description']; ?>"></textarea>
                           </div>
+
+                          <script>
+                            CKEDITOR.replace('editor1');
+                          </script>
 
                           <input hidden name="id_experience" value="<?= $ligne_experience['id_experience']; ?>">
 

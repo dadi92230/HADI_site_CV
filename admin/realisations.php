@@ -85,12 +85,12 @@ if (isset($_GET['id_realisation'])) { // on récupère la comp. par son id dans 
         <li class="active">Réalisations</li>
     </ol>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h2>Les réalisations :</h2>
             <h4 class="well">J'ai <?= $nbr_realisation;?> realisation<?= ($nbr_realisation>1)?'s':''?></h4>
         </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <table border="2" class="table table-condensed table-hover">
                     <tr>
                         <th>Titre</th>
@@ -112,38 +112,40 @@ if (isset($_GET['id_realisation'])) { // on récupère la comp. par son id dans 
                         <?php } ?>
                     </table>
             </div>
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-body">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <div>Insertion d'une réalisation :</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div>Insertion d'une réalisation :</div>
+                            </div>
                         </div>
-                    </div>
-                        <form action="realisations.php" method="post">
-                            <fieldset>
-                                <?= $msg; ?>
-                                <div class="form-group">
-                                    <label for="disabledSelect">Titre</label>
-                                    <input type="text" name="r_titre" id="r_titre" placeholder="Insérer un titre" class="form-control">
-                                </div>
+                            <form action="realisations.php" method="post">
+                                <fieldset>
+                                    <?= $msg; ?>
+                                    <div class="form-group">
+                                        <label for="disabledSelect">Titre</label>
+                                        <input type="text" name="r_titre" id="r_titre" placeholder="Insérer un titre" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="disabledSelect">Soustitre</label>
-                                    <input type="text" name="r_soustitre" id="r_soustitre" placeholder="Insérer un soustitre" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="disabledSelect">Soustitre</label>
+                                        <input type="text" name="r_soustitre" id="r_soustitre" placeholder="Insérer un soustitre" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="disabledSelect">Dates</label>
-                                    <input type="text" name="r_dates" id="r_dates" placeholder="Insérer une date" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="disabledSelect">Dates</label>
+                                        <input type="text" name="r_dates" id="r_dates" placeholder="Insérer une date" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="disabledSelect">Description</label>
-                                    <textarea name="r_description" id="r_description" class="form-control" placeholder="Insérer une description"></textarea>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="disabledSelect">Description</label>
+                                        <textarea name="r_description" id="r_description" class="form-control" placeholder="Insérer une description"></textarea>
+                                    </div>
 
-                                <input type="submit" class="btn btn-primary" value="Insérez">
+                                    <input type="submit" class="btn btn-primary" value="Insérez">
 
                             </fieldset>
                         </form>

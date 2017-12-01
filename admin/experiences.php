@@ -57,6 +57,10 @@ if (isset($_GET['id_experience'])) { // on récupère la comp. par son id dans l
         $ligne_utilisateur = $resultat -> fetch();
         ?>
         <title>Admin : <?= ($ligne_utilisateur['pseudo']); ?></title>
+
+        <!--CKEditor-->
+        <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
 
         <!-- Bootstrap -->
@@ -86,12 +90,12 @@ if (isset($_GET['id_experience'])) { // on récupère la comp. par son id dans l
         <li class="active">Expériences</li>
     </ol>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h2>Les expériences :</h2>
             <h4 class="well">J'ai <?= $nbr_experience;?> experience<?= ($nbr_experience>1)?'s':''?></h4>
         </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <table border="2" class="table table-condensed table-hover">
                     <tr>
                         <th>Titre</th>
@@ -113,7 +117,11 @@ if (isset($_GET['id_experience'])) { // on récupère la comp. par son id dans l
                         <?php } ?>
                     </table>
             </div>
-        <div class="col-md-4">
+        </div>
+
+
+        <div class="row">
+        <div class="col-md-12">
             <div class="panel panel-info">
                 <div class="panel-body">
                     <div class="panel panel-info">
@@ -135,14 +143,18 @@ if (isset($_GET['id_experience'])) { // on récupère la comp. par son id dans l
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="disabledSelect">Dates</label>
+                                    <label for="e_dates">Dates</label>
                                     <input type="text" name="e_dates" id="e_dates" placeholder="Insérer une date" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="disabledSelect">Description</label>
-                                    <textarea name="e_description" id="e_description" class="form-control" placeholder="Insérer une description"></textarea>
+                                    <label for="e_description">Description</label>
+                                    <textarea name="e_description" id="editor1" class="form-control"></textarea>
                                 </div>
+
+                                <script>
+                                    CKEDITOR.replace('editor1');
+                                </script>
 
                                 <input type="submit" class="btn btn-primary" value="Insérez">
 

@@ -179,4 +179,16 @@ fieldset{
 
 
 */
-
+.panel-warning {
+    border-color: #faebcc;
+    box-sizing: border-box;
+    margin-bottom: 215px;
+}
+.panel {
+    margin-bottom: 122px;
+    background-color: #b7b2b2;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}

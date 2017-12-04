@@ -169,7 +169,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <a href="CV Hadi Smail.pdf" class="btn btn--primary full-width">TÉLÉCHARGER MON CV</a>
             </div>
             <div class="col-six tab-full right">
-                <a href="#contact" class="btn full-width">ENGAGEZ-MOI MAINTENANT</a>
+                <a href="#contact" class="btn btn--primary full-width">ENGAGEZ-MOI MAINTENANT</a>
             </div>
         </div> <!-- fin de bouton CV -->
     </section> <!-- end about -->
@@ -383,7 +383,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <h3>Contact</h3>
                 <h1>Dis bonjour.</h1>
                 
-                <p class="lead">.</p>
+                
             </div>
         </div>
 
@@ -460,9 +460,9 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-full">
 
-                <div class="footer-logo">
+                <!-- <div class="footer-logo">
                     <a class="footer-site-logo" href="#0"><img src="images/3283885.png" alt="Homepage"></a>
-                </div>
+                </div> -->
 
                 <ul class="footer-social">
                     <!-- <li><a href="#0">
@@ -495,7 +495,8 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
             <div class="col-twelve">
                 <div class="copyright">
                     <span>© Copyright Hola 2017</span> 
-                    <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
+                    <span>Design by <a href="http://www.hadi-smail.com/">hadi-smail</a></span>
+                    <span><a href="../admin/index.php">admin</a></span>	
                 </div>
 
                 <div class="go-top">

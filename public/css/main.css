@@ -3306,9 +3306,9 @@ html.no-csstransitions .home-content__main {
 footer {
     font-family: "montserrat-regular", sans-serif;
     font-size: 14px;
-    padding: 6.6rem 0 4.2rem;
+    padding:  0 4.2rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(25, 29, 26, 0.98);
 }
 
 footer a, footer a:visited {
@@ -3369,7 +3369,7 @@ footer a:hover, footer a:focus {
 }
 
 .footer-social li a {
-    color: #FFFFFF;
+    color: #820d0d;
 }
 
 .footer-social li:last-child {
@@ -3381,7 +3381,6 @@ footer a:hover, footer a:focus {
 }
 
 .footer-bottom {
-    margin-top: 7.2rem;
     text-align: center;
 }
 

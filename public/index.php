@@ -49,7 +49,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
      <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html"><img src="images/3283885.png"></a>
+            <a class="site-logo" href="#home"><img src="images/3283885.png"></a>
         </div>
 
         <nav class="header-nav-wrap">
@@ -84,7 +84,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
                 <h1>
                    <p class="holder">
-                       Je suis <?php echo $ligne_utilisateur['prenom'];?> <?php echo $ligne_utilisateur['nom'];?> . <br>
+                        <?php echo $ligne_utilisateur['prenom'];?> <?php echo $ligne_utilisateur['nom'];?> . <br>
                    Développeur Intégrateur WEB/ Designer  <br>
                     Basé sur Paris.
                    </p>
@@ -111,13 +111,13 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <a href="#"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
             </li> -->
             <li>
-                <a href="#"><i class="im im-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                <a href="https://twitter.com/dadi_smail"><i class="im im-twitter" aria-hidden="true"></i><span>Twitter</span></a>
             </li>
             <li>
-                <a href="#"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                <a href="https://www.instagram.com/?"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
             </li>
             <li>
-                <a href="#"><i class="im im-pinterest" aria-hidden="true"></i><span>Pinterest</span></a>
+                <a href="https://www.pinterest.fr/dadi922/"><i class="im im-pinterest" aria-hidden="true"></i><span>Pinterest</span></a>
             </li>
         </ul> 
         <!-- fin reseau -->
@@ -430,18 +430,17 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 </div>
                         
             </div>
-            <div class="col-four tab-full contact__infos">
-                <h4 class="h06">Phone</h4>
-                <p>Phone: (+33) 7 69 60 02 52<br>
-                Mobile: (+33) 7 83 13 58 63
-                </p>
-
+            <div class="col-four ">
+                <h4 class="h06">téléphone</h4>
+                <p>Téléphone: (+33)<?php echo $ligne_utilisateur['telephone'];?><br>Telephone: (+33)783135863</p>
+                
+                
                 <h4 class="h06">Email</h4>
                 <p>hadi.web@hotmail.fr<br>
                 
                 </p>
 
-                <h4 class="h06">Address</h4>
+                <h4 class="h06">Adresse</h4>
                 <p>
                 6, rue Jean Moulin<br>
                 Gennevilliers<br>
@@ -473,7 +472,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                         <i class="im im-twitter" aria-hidden="true"></i>
                         <span>Twitter</span>
                     </a></li>
-                    <li><a href="#0">
+                    <li><a href="#https://www.instagram.com/?">
                         <i class="im im-instagram" aria-hidden="true"></i>
                         <span>Instagram</span>
                     </a></li>
@@ -481,7 +480,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                         <i class="im im-behance" aria-hidden="true"></i>
                         <span>Behance</span>
                     </a></li> -->
-                    <li><a href="#0">
+                    <li><a href="https://www.pinterest.fr/dadi922/">
                         <i class="im im-pinterest" aria-hidden="true"></i>
                         <span>Pinterest</span>
                     </a></li>
@@ -494,7 +493,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
             <div class="col-twelve">
                 <div class="copyright">
-                    <span>© Copyright Hola 2017</span> 
+                    <span>copyright&copy;<?php echo date("Y"); ?></span> 
                     <span>Design by <a href="http://www.hadi-smail.com/">hadi-smail</a></span>
                     <span><a href="../admin/index.php">admin</a></span>	
                 </div>
@@ -506,52 +505,11 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
         </div> <!-- end footer-bottom -->
 
+
     </footer> <!-- end footer -->
 
 
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div><!-- end photoSwipe background -->
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
-
+    
 
     <!-- Java Script
     ================================================== -->

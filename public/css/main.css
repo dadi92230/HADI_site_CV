@@ -4144,3 +4144,12 @@ article.blog-single .blog-content {
 .black{
     background-color:black; 
 }
+.contact{
+           font-size: 45px;
+    position: absolute;
+    left: 461px;
+}
+.contact:hover{
+    
+    color: #fff;
+}

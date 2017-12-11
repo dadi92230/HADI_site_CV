@@ -40,6 +40,8 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://use.fontawesome.com/01e47cb12c.js"></script>
 </head>
 
 <body id="top">
@@ -89,6 +91,8 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                     Basé sur Paris.
                    </p>
                 </h1>
+
+                <a href="#contact" class="contact smoothscroll"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
 
                 <div class="home-content__buttons">
                     <a href="#about" class="smoothscroll btn btn--stroke">
@@ -169,7 +173,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <a href="CV Hadi Smail.pdf" class="btn btn--primary full-width">TÉLÉCHARGER MON CV</a>
             </div>
             <div class="col-six tab-full right">
-                <a href="#contact" class="btn btn--primary full-width">ENGAGEZ-MOI MAINTENANT</a>
+                <a href="#contact" class="smoothscroll btn btn--primary full-width">ENGAGEZ-MOI MAINTENANT</a>
             </div>
         </div> <!-- fin de bouton CV -->
     </section> <!-- end about -->
@@ -186,27 +190,26 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
             <?php /*recuperation des experiences*/
                 $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='1'");
                  $resultat->execute();?>
-
-
-                 <?php while ($ligne_experience = $resultat -> fetch()) { ?>
-                    <div class="col-six tab-full ">
-                        <div class="timeline">
-
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <p class="timeline__timeframe"><?= $ligne_experience['e_dates'];?></p>
-                                    <h3><?= $ligne_experience['e_titre'];?></h3>
-                                    <h5><?= $ligne_experience['e_soustitre'];?></h5>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p><?= $ligne_experience['e_description'];?>.</p>
-                                </div>
-                            </div> <!-- end timeline__block -->
+                <?php $tab_xp=["",""]; 
+                    $i=0;
+                
+                //<!-- boucle d\'experiences -->
+                  while ($ligne_experience = $resultat -> fetch()) { 
+                    
+                             $tab_xp[$i%2].='<div class="timeline__block"><div class="timeline__bullet"></div><div class="timeline__header"><p class="timeline__timeframe">' . $ligne_experience['e_dates'] . '</p><h3>'. $ligne_experience['e_titre'].'</h3><h5>'. $ligne_experience['e_soustitre'].'</h5></div><div class="timeline__desc"><p>'. $ligne_experience['e_description'].'</p></div></div>'; 
+                           
                             
+                        
+                 $i++;} 
+                for($j=0; $j<count($tab_xp);$j++){ ?>
+
+                    <div class="col-six tab-full  ">
+                        <div class="timeline">
+                            <?php echo $tab_xp[$j]; ?>
                         </div> <!-- end timeline -->
                     </div> <!-- end left -->
-                <?php } ?>
+               <?php } ?>
+                
             </div> <!-- end timeline -->
         </div> <!-- end left -->
     </section>
@@ -222,33 +225,38 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
             <?php /*recuperation des formation*/
                 $resultat = $pdo -> prepare("SELECT * FROM t_formations WHERE utilisateur_id ='1'");
                     $resultat->execute();
-                ?>
+                     $tab_xp=["",""]; 
+                    $i=0;
+                
 
-
-                 <?php while ($ligne_formation = $resultat -> fetch()) { ?>
-                    <div class="col-six tab-full ">
-                        <div class="timeline">
-
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <p class="timeline__timeframe"><?= $ligne_formation['f_dates'];?></p>
-                                    <h3><?= $ligne_formation['f_titre'];?></h3>
-                                    <h5><?= $ligne_formation['f_soustitre'];?></h5>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p><?= $ligne_formation['f_description'];?>.</p>
-                                </div>
-                            </div> <!-- end timeline__block -->
+                    while ($ligne_experience = $resultat -> fetch()) { 
+                    
+                    $tab_xp[$i%2].='<div class="timeline__block"><div class="timeline__bullet"></div><div class="timeline__header"><p class="timeline__timeframe">' . $ligne_experience['f_dates'] . '</p><h3>'. $ligne_experience['f_titre'].'</h3><h5>'. $ligne_experience['f_soustitre'].'</h5></div><div class="timeline__desc"><p>'. $ligne_experience['f_description'].'</p></div></div>'; 
+                           
                             
+                        
+                 $i++;} 
+                for($j=0; $j<count($tab_xp);$j++){ ?>
+
+                    <div class="col-six tab-full  ">
+                        <div class="timeline">
+                            <?php echo $tab_xp[$j]; ?>
                         </div> <!-- end timeline -->
                     </div> <!-- end left -->
-                <?php } ?>
+               <?php } ?>
+                
             </div> <!-- end timeline -->
         </div> <!-- end left -->
     </section>
     <div class="black">.</div>
-    
+
+
+
+
+
+
+
+                 
             
 
     <section id="blog" class="s-blog target-section">

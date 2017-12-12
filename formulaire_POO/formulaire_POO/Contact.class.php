@@ -46,7 +46,7 @@ class Contact {
 
     // Bonus - envoi d'un email
     public function sendEmail($sujet, $email, $message) {
-        $this->to = 'mhng75@gmail.com';
+        $this->to = 'dadi922@hotmail.fr';
         $this->email = strip_tags($email);
         $this->sujet = strip_tags($sujet);
         $this->message = strip_tags($message);

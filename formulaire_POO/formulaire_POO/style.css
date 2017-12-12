@@ -1,0 +1,507 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 6 déc. 2017, 14:12:07
+    Author     : Mila
+*/
+body{
+    margin-top: 10vh;
+    background: url('bg.jpg') repeat;
+}
+span.error{
+    color: red;
+}
+h5{
+    color: darkslategray;
+    font-style: italic;
+}
+
+
+/**
+FEUILLE DE STYLE POUR NESSIE
+**/
+.content-wrapper {
+    margin-top: 5vh;
+    border-radius: 100%;
+    height: 25vh;
+    overflow: hidden;
+    position: absolute;
+    width: 25vh;
+    background: linear-gradient(#141F3B, #38695D);
+    background: -webkit-linear-gradient(#141F3B, #38695D);
+    /*background: -moz-linear-gradient(#141F3B, #38695D);*/
+    background: -ms-linear-gradient(#141F3B, #38695D);
+}
+
+.mountain-1 {
+    background-color: #011322;
+    border-radius: 60%;
+    bottom: 30px;
+    height: 110px;
+    left: -80px;
+    position: absolute;
+    width: 220px;
+}
+
+.mountain-2 {
+    background-color: #0b1d2c;
+    border-radius: 90% 0% 90% 0%;
+    bottom: 70px;
+    height: 80px;
+    position: absolute;
+    right: -70px;
+    width: 250px;
+}
+
+.mountain-3 {
+    background-color: #152736;
+    border-radius: 100% 0% 100% 0;
+    bottom: 60px;
+    height: 90px;
+    position: absolute;
+    right: -100px;
+    width: 240px;
+}
+
+.lochness {
+    background-color: #243645;
+    bottom: 0;
+    height: 80px;
+    position: absolute;
+    width: 250px;
+}
+.lochness .detail {
+    border-top: 1px solid #f3f0f8;
+    height: 4px;
+    opacity: 0.07;
+    position: absolute;
+    width: 12px;
+}
+.lochness .detail.d1 {
+    bottom: 60px;
+    left: 40px;
+}
+.lochness .detail.d2 {
+    bottom: 20px;
+    left: 85px;
+}
+.lochness .detail.d3 {
+    bottom: 30px;
+    left: 160px;
+}
+.lochness .detail.d4 {
+    bottom: 60px;
+    left: 180px;
+}
+
+.nessie {
+    background-color: orange;
+    border-radius: 40% 40% 0% 0%;
+    bottom: 40px;
+    height: 15px;
+    left: 140px;
+    position: absolute;
+    width: 4px;
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    /*-moz-transform: rotate(15deg);*/
+    -ms-transform: rotate(15deg);
+    animation: showNessie 25s linear infinite;
+    -webkit-animation: showNessie 25s linear infinite;
+    /*-moz-animation: showNessie 25s linear infinite;*/
+    -ms-animation: showNessie 25s linear infinite;
+    -o-animation: showNessie 25s linear infinite;
+}
+.nessie:before {
+    background-color: orange;
+    border-radius: 100%;
+    bottom: 10px;
+    content: '';
+    height: 7px;
+    left: 1px;
+    position: absolute;
+    width: 10px;
+}
+.nessie:after {
+    border-top: 7px solid orange;
+    border-radius: 100%;
+    bottom: -15px;
+    content: '';
+    height: 10px;
+    left: -35px;
+    position: absolute;
+    width: 30px;
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    /*-moz-transform: rotate(-15deg);*/
+    -ms-transform: rotate(-15deg);
+}
+
+.moon {
+    border-bottom: 2px solid #f3f0f8;
+    border-radius: 100%;
+    height: 12px;
+    position: absolute;
+    right: 75px;
+    top: 45px;
+    width: 12px;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    /*-moz-transform: rotate(20deg);*/
+    -ms-transform: rotate(20deg);
+}
+
+.star {
+    background-color: #f3f0f8;
+    height: 1px;
+    position: absolute;
+    width: 1px;
+}
+
+.s1 {
+    left: 80%;
+    top: 36%;
+    animation: shiningStar 15s -18s infinite;
+    -webkit-animation: shiningStar 15s -18s infinite;
+    /*-moz-animation: shiningStar 15s -18s infinite;*/
+    -ms-animation: shiningStar 15s -18s infinite;
+    -o-animation: shiningStar 15s -18s infinite;
+}
+
+.s2 {
+    left: 72%;
+    top: 5%;
+    animation: shiningStar 19s -6s infinite;
+    -webkit-animation: shiningStar 19s -6s infinite;
+    /*-moz-animation: shiningStar 19s -6s infinite;*/
+    -ms-animation: shiningStar 19s -6s infinite;
+    -o-animation: shiningStar 19s -6s infinite;
+}
+
+.s3 {
+    left: 64%;
+    top: 7%;
+    animation: shiningStar 18s -17s infinite;
+    -webkit-animation: shiningStar 18s -17s infinite;
+    /*-moz-animation: shiningStar 18s -17s infinite;*/
+    -ms-animation: shiningStar 18s -17s infinite;
+    -o-animation: shiningStar 18s -17s infinite;
+}
+
+.s4 {
+    left: 69%;
+    top: 35%;
+    animation: shiningStar 19s -5s infinite;
+    -webkit-animation: shiningStar 19s -5s infinite;
+    /*-moz-animation: shiningStar 19s -5s infinite;*/
+    -ms-animation: shiningStar 19s -5s infinite;
+    -o-animation: shiningStar 19s -5s infinite;
+}
+
+.s5 {
+    left: 63%;
+    top: 31%;
+    animation: shiningStar 23s -2s infinite;
+    -webkit-animation: shiningStar 23s -2s infinite;
+    /*-moz-animation: shiningStar 23s -2s infinite;*/
+    -ms-animation: shiningStar 23s -2s infinite;
+    -o-animation: shiningStar 23s -2s infinite;
+}
+
+.s6 {
+    left: 69%;
+    top: 17%;
+    animation: shiningStar 24s -18s infinite;
+    -webkit-animation: shiningStar 24s -18s infinite;
+    /*-moz-animation: shiningStar 24s -18s infinite;*/
+    -ms-animation: shiningStar 24s -18s infinite;
+    -o-animation: shiningStar 24s -18s infinite;
+}
+
+.s7 {
+    left: 53%;
+    top: 17%;
+    animation: shiningStar 14s -7s infinite;
+    -webkit-animation: shiningStar 14s -7s infinite;
+    /*-moz-animation: shiningStar 14s -7s infinite;*/
+    -ms-animation: shiningStar 14s -7s infinite;
+    -o-animation: shiningStar 14s -7s infinite;
+}
+
+.s8 {
+    left: 60%;
+    top: 15%;
+    animation: shiningStar 25s -24s infinite;
+    -webkit-animation: shiningStar 25s -24s infinite;
+    /*-moz-animation: shiningStar 25s -24s infinite;*/
+    -ms-animation: shiningStar 25s -24s infinite;
+    -o-animation: shiningStar 25s -24s infinite;
+}
+
+.s9 {
+    left: 14%;
+    top: 5%;
+    animation: shiningStar 25s -23s infinite;
+    -webkit-animation: shiningStar 25s -23s infinite;
+    /*-moz-animation: shiningStar 25s -23s infinite;*/
+    -ms-animation: shiningStar 25s -23s infinite;
+    -o-animation: shiningStar 25s -23s infinite;
+}
+
+.s10 {
+    left: 63%;
+    top: 23%;
+    animation: shiningStar 14s -8s infinite;
+    -webkit-animation: shiningStar 14s -8s infinite;
+    /*-moz-animation: shiningStar 14s -8s infinite;*/
+    -ms-animation: shiningStar 14s -8s infinite;
+    -o-animation: shiningStar 14s -8s infinite;
+}
+
+.s11 {
+    left: 26%;
+    top: 40%;
+    animation: shiningStar 24s -1s infinite;
+    -webkit-animation: shiningStar 24s -1s infinite;
+    /*-moz-animation: shiningStar 24s -1s infinite;*/
+    -ms-animation: shiningStar 24s -1s infinite;
+    -o-animation: shiningStar 24s -1s infinite;
+}
+
+.s12 {
+    left: 58%;
+    top: 37%;
+    animation: shiningStar 17s -8s infinite;
+    -webkit-animation: shiningStar 17s -8s infinite;
+    /*-moz-animation: shiningStar 17s -8s infinite;*/
+    -ms-animation: shiningStar 17s -8s infinite;
+    -o-animation: shiningStar 17s -8s infinite;
+}
+
+.s13 {
+    left: 82%;
+    top: 27%;
+    animation: shiningStar 17s -20s infinite;
+    -webkit-animation: shiningStar 17s -20s infinite;
+    /*-moz-animation: shiningStar 17s -20s infinite;*/
+    -ms-animation: shiningStar 17s -20s infinite;
+    -o-animation: shiningStar 17s -20s infinite;
+}
+
+.s14 {
+    left: 29%;
+    top: 4%;
+    animation: shiningStar 23s -22s infinite;
+    -webkit-animation: shiningStar 23s -22s infinite;
+    /*-moz-animation: shiningStar 23s -22s infinite;*/
+    -ms-animation: shiningStar 23s -22s infinite;
+    -o-animation: shiningStar 23s -22s infinite;
+}
+
+.s15 {
+    left: 39%;
+    top: 4%;
+    animation: shiningStar 17s -24s infinite;
+    -webkit-animation: shiningStar 17s -24s infinite;
+    /*-moz-animation: shiningStar 17s -24s infinite;*/
+    -ms-animation: shiningStar 17s -24s infinite;
+    -o-animation: shiningStar 17s -24s infinite;
+}
+
+.s16 {
+    left: 22%;
+    top: 23%;
+    animation: shiningStar 18s -5s infinite;
+    -webkit-animation: shiningStar 18s -5s infinite;
+    /*-moz-animation: shiningStar 18s -5s infinite;*/
+    -ms-animation: shiningStar 18s -5s infinite;
+    -o-animation: shiningStar 18s -5s infinite;
+}
+
+.s17 {
+    left: 27%;
+    top: 22%;
+    animation: shiningStar 22s -14s infinite;
+    -webkit-animation: shiningStar 22s -14s infinite;
+    /*-moz-animation: shiningStar 22s -14s infinite;*/
+    -ms-animation: shiningStar 22s -14s infinite;
+    -o-animation: shiningStar 22s -14s infinite;
+}
+
+.s18 {
+    left: 9%;
+    top: 13%;
+    animation: shiningStar 18s -25s infinite;
+    -webkit-animation: shiningStar 18s -25s infinite;
+    /*-moz-animation: shiningStar 18s -25s infinite;*/
+    -ms-animation: shiningStar 18s -25s infinite;
+    -o-animation: shiningStar 18s -25s infinite;
+}
+
+/* animations */
+@keyframes shiningStar {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes shiningStar {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes shiningStar {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-ms-keyframes shiningStar {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes showNessie {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes showNessie {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes showNessie {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-ms-keyframes showNessie {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/**
+FIN - FEUILLE DE STYLE POUR NESSIE
+**/

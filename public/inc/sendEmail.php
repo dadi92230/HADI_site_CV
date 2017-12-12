@@ -1,4 +1,4 @@
-﻿<?php
+﻿ <?php
 
 // Replace this with your own email address
 $siteOwnersEmail = 'dadi922@hotmail.fr';

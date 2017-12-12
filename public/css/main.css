@@ -172,6 +172,7 @@ h2, .h02 {
 h3, .h03 {
     font-size: 2.4rem;
     line-height: 1.25;
+
 }
 
 h4, .h04 {
@@ -832,7 +833,7 @@ input[type="submit"].btn--primary:focus,
 input[type="reset"].btn--primary:focus, 
 input[type="button"].btn--primary:focus {
     background: #862121;
-    border-color: #862121;
+    border-color: #ababab;;
 }
 
 
@@ -1281,7 +1282,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     text-transform: uppercase;
     letter-spacing: .15rem;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 31px;
 }
 
 .section-intro.has-bottom-sep {
@@ -3046,11 +3047,11 @@ html.no-csstransitions .home-content__main {
 .s-contact {
     background-color: #151515;
     background-image: url("../images/web-.jpg");
-    background-size: 100%;
+    background-size: 146%;
     background-repeat: no-repeat;
     background-position: center, center;
-    padding-top: 13.2rem;
-    padding-bottom: 12rem;
+    padding-top: 8.2rem;
+    padding-bottom: 8rem;
     color: rgba(255, 255, 255, 0.5);
     position: relative;
 }
@@ -3154,8 +3155,16 @@ html.no-csstransitions .home-content__main {
 
 .contact__form button {
     margin-top: 4.2rem;
-    background-color: #862121;
-    border-color: #862121;
+    border-color: #FFFFFF;
+    color: #f7f7f7;
+    letter-spacing: 1.25rem;
+    transition: all 0.5s ease-in-out
+}
+
+.contact__form button:hover, 
+.contact__form button:focus {
+    background: #FFFFFF !important;
+    color: #000000;
 }
 
 .message-warning, .message-success {
@@ -4145,11 +4154,24 @@ article.blog-single .blog-content {
     background-color:black; 
 }
 .contact{
-           font-size: 45px;
+    font-size: 45px;
     position: absolute;
-    left: 461px;
+    left: 241px;
+    top: 347px;
 }
 .contact:hover{
     
     color: #fff;
+}
+.title-color {
+    font-family: "montserrat-semibold", sans-serif;
+    font-size: 2rem;
+    color: #862121;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+}
+.present{
+    font-family: "montserrat-semibold", sans-serif;
+    font-size: 2rem;
+    color: black;
 }

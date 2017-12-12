@@ -51,7 +51,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
      <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="#home"><img src="images/3283885.png"></a>
+            <a class="smoothscroll site-logo" href="#home"><img src="images/3283885.png"></a>
         </div>
 
         <nav class="header-nav-wrap">
@@ -61,7 +61,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                 <li><a class="smoothscroll"  href="#competences" title="competences">COMPETENCES</a></li>
                 <li><a class="smoothscroll"  href="#Experiences" title="Experiences">EXPERIENCES</a></li>
                 <li><a class="smoothscroll"  href="#Formation" title="Formation">FORMATION</a></li>
-                <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
+                <!-- <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li> -->
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
             </ul>
         </nav>
@@ -134,9 +134,10 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
         
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full text-center">
-                <h3>À PROPOS</h3>
-                <h1>presentation</h1>
-                <!-- <p>presentation </p> -->
+                <h3 class="title-color">À PROPOS DE MOI</h3>
+                <!-- <h1>presentation</h1> -->
+                <p class="present">je m’appelle Hadi Smail, je suis développeur intégrateur depuis  plus d'un an , J'ai  suivi une formation de niveau BAC +2 reconnue RNCP à l’école 3W Academy  qui a duré 3 mois, puis par la suite pour me perfectionner j'ai suivi une autre formation de 10 mois au PoleS  qui m'a permis de solidifier mes compétences.
+                Je suis actuellement  a la recherche d'un poste de développeur.  </p>
             </div>
         </div>
     </section> <!-- end about -->
@@ -147,7 +148,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     <section id="competences" class="s-competences target-section"> <!-- end about -->
         <div  class="row ">
             <div class="col-full text-center">
-                <h3>Mes compétences.</h3>
+                <h3 class="title-color">Mes compétences.</h3>
                  <?php
                 $resultat = $pdo -> prepare("SELECT * FROM t_competences WHERE utilisateur_id ='1'");
                 $resultat->execute();
@@ -185,7 +186,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     <section id="Experiences" class="s-Experiences target-section">
         <div   class="row about-content about-content--timeline">
             <div class="col-full text-center">
-                <h3>Mes Experiences.</h3>
+                <h3 class="title-color">Mes Experiences.</h3>
 
             <?php /*recuperation des experiences*/
                 $resultat = $pdo -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id ='1'");
@@ -220,7 +221,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     <section id="Formation" class="s-Formation target-section">
          <div  class="row about-content about-content--timeline">
             <div class="col-full text-center">
-                <h3>Mes Formation.</h3>
+                <h3 class="title-color">Mes Formation.</h3>
 
             <?php /*recuperation des formation*/
                 $resultat = $pdo -> prepare("SELECT * FROM t_formations WHERE utilisateur_id ='1'");
@@ -259,7 +260,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                  
             
 
-    <section id="blog" class="s-blog target-section">
+    <!-- <section id="blog" class="s-blog target-section">
 
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full">
@@ -343,7 +344,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
             </div> <!-- end col-full -->
         </div> <!-- end blog-content -->
 
-    </section> <!-- end s-blog -->
+    </section> <!-- end s-blog --> 
 
 
 
@@ -388,8 +389,8 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
         <div class="row narrow section-intro">
             <div class="col-full">
-                <h3>Contact</h3>
-                <h1>Dis bonjour.</h1>
+                <h3 class="">Contactez-moi</h3>
+                
                 
                 
             </div>

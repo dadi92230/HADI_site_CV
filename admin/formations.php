@@ -58,6 +58,9 @@ if (isset($_GET['id_formation'])) { // on récupère la comp. par son id dans l'
         <title>Admin : <?= ($ligne_utilisateur['pseudo']); ?></title>
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
 
+        <!--CKEditor-->
+        <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -85,12 +88,12 @@ if (isset($_GET['id_formation'])) { // on récupère la comp. par son id dans l'
         <li class="active">Formations</li>
     </ol>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h2>Les formations :</h2>
             <h4 class="well">J'ai <?= $nbr_formations;?> formation<?= ($nbr_formations>1)?'s':''?></h4>
         </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <table border="2" class="table table-condensed table-hover">
                     <tr>
                         <th>Titre</th>
@@ -112,7 +115,7 @@ if (isset($_GET['id_formation'])) { // on récupère la comp. par son id dans l'
                         <?php } ?>
                     </table>
             </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class="panel panel-info">
                 <div class="panel-body">
                     <div class="panel panel-info">
@@ -140,8 +143,12 @@ if (isset($_GET['id_formation'])) { // on récupère la comp. par son id dans l'
 
                                 <div class="form-group">
                                     <label for="disabledSelect">Description</label>
-                                    <textarea name="f_description" id="f_description" class="form-control" placeholder="Insérer une description"></textarea>
+                                    <textarea name="f_description" id="editor1" class="form-control" "></textarea>
                                 </div>
+
+                                 <script>
+                                    CKEDITOR.replace('editor1');
+                                </script>
 
                                 <input type="submit" class="btn btn-primary" value="Insérez">
 

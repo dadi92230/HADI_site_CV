@@ -339,13 +339,13 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
                             <a href="blog.html">Design</a><a href="blog.html">Branding</a>
                         </div>
                     </article>
-                </div> <!-- end blog-list -->
+                </div> <!-- end blog-list
 
             </div> <!-- end col-full -->
-        </div> <!-- end blog-content -->
+        <!-- </div> end blog-content
 
-    </section> <!-- end s-blog --> 
-
+    </section> --> <!-- end s-blog --> 
+ 
 
 
 
@@ -390,14 +390,12 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
         <div class="row narrow section-intro">
             <div class="col-full">
                 <h3 class="">Contactez-moi</h3>
-                
-                
-                
             </div>
         </div>
 
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
+                
                 <form name="contactForm" id="contactForm" method="post" action="">
                     <fieldset>
     
@@ -427,6 +425,14 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     
                     </fieldset>
                 </form>
+
+
+
+
+
+
+
+                
 
                 <!-- contact-warning -->
                 <div class="message-warning">

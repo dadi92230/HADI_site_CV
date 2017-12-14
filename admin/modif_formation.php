@@ -42,6 +42,9 @@ $ligne_formation = $resultat->fetch();
         ?>
         <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+
+         <!--CKEditor-->
+        <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -80,8 +83,12 @@ $ligne_formation = $resultat->fetch();
 
                           <div class="form-group">
                             <label for="f_description">Description :</label><br>
-                            <input type="text" name="f_description" value="<?= $ligne_formation['f_description']; ?>"><br><br>
+                            <textarea name="f_description" id="editor1" class="form-control"  value="<?= $ligne_formation['f_description']; ?>"></textarea>
                           </div>
+
+                          <script>
+                            CKEDITOR.replace('editor1');
+                          </script>
 
                           <input hidden name="id_formation" value="<?= $ligne_formation['id_formation']; ?>">
 

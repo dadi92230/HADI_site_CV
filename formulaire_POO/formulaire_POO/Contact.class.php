@@ -33,14 +33,16 @@ class Contact {
         // on requiert le fichier connexion.php qui contient l'accès à la BDD
         require('connexion.php');
 
-        // on créé une requête puis on l'exécute
-        $req = $bdd->prepare('INSERT INTO contact (nom, email, sujet, message) VALUES (:nom, :email, :sujet, :message)');
+
+          // on crée une requête puis on l'exécute
+        $req = $pdo->prepare('INSERT INTO t_commentaires (co_nom, co_email, co_sujet, co_message) VALUES (:co_nom, :co_email, :co_sujet, :co_message)');
         $req->execute([
-            ':nom' => $this->nom, // on attribue à ma variable la valeur de l'objet instancié, le nom de l'auteur du message qui vient d'être posté
-            ':email' => $this->email,
-            ':sujet' => $this->sujet,
-            ':message' => $this->message]);
-        // on ferme la requête (protection c/ les injections)
+            ':co_nom'   => $this->nom, // on attribue à la variable co_nom la valeur de l'objet en cours d'instanciation, le nom de l'auteur du message qui vient d'être posté.
+            ':co_email' => $this->email,
+            ':co_sujet' => $this->sujet,
+            ':co_message' => $this->message]);
+        echo 'bonjour';
+        // on ferme la requête pour protéger des injections
         $req->closeCursor();
     }
 

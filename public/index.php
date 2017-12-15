@@ -1,15 +1,46 @@
 <?php
 require('../admin/inc/init.inc.php');
+require('Contact.class.php');
 
 //recuperation des info utilisateur (moi)
 $resultat = $pdo -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1'");
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
-
-
-        
-
 ?>
 
+
+<?php 
+
+// on vérifie que le formulaire a bien été posté
+if (!empty($_POST)) {
+    // on éclate le tableau avec la méthode EXTRACT(), ce qui nous permet d'accéder directement aux champs par des variables
+ extract($_POST);
+
+
+// on effectue une validation des données du formulaire et notamment on vérifie la validité de l'email
+ $valid = (empty($co_nom) || empty($co_email) || !filter_var($co_email, FILTER_VALIDATE_EMAIL) || empty($co_sujet) || empty($co_message)) ? false : true; // écriture ternaire pour if / else
+
+
+// si tous les champs sont correctement renseignés
+    if ($valid) {
+        // on crée un nouvel objet (ou une instance) de la classe Contact.class.php
+        $contact = new Contact();
+// on utilise la méthode insertContact de la classe Contact.class.php
+        $contact->insertContact($co_nom, $co_email, $co_sujet, $co_message);
+
+        // on utilise la méthode sendMail de la classe Contact.class.php
+        //$contact->sendEmail($sujet, $email, $message);
+        // on efface les valeurs du formulaires
+        unset($co_nom);
+        unset($co_email);
+        unset($co_sujet);
+        unset($co_message);
+
+        // on créé une variable de succès
+        $success = 'Message envoyé !';
+    }
+
+}
+ ?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -396,55 +427,35 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
                 
-                <form name="contactForm" id="contactForm" method="post" action="">
+                <form name="" id="" method="POST" action="index.php#contact">
                     <fieldset>
     
                     <div class="form-field">
-                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                        
+                        <input name="co_nom" type="text" id="contactName" placeholder="Nom"    class="full-width">
                     </div>
                     <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                        
+                        <input name="co_email" type="email" id="contactEmail" placeholder="Email"    class="full-width">
                     </div>
                     <div class="form-field">
-                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                        
+                        <input name="co_sujet" type="text" id="contactSubject" placeholder="Subjet" class="full-width">
                     </div>
                     <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                        
+                        <textarea name="co_message" id="contactMessage" placeholder="message" rows="10" cols="50"   class="full-width"></textarea>
                     </div>
                     <div class="form-field">
-                        <button class="full-width btn--primary">SOUMETTRE</button>
-                        <div class="submit-loader">
-                            <div class="text-loader">Sending...</div>
-                            <div class="s-loader">
-                                <div class="bounce1"></div>
-                                <div class="bounce2"></div>
-                                <div class="bounce3"></div>
-                            </div>
-                        </div>
+                        
+                        <input type="submit" class="full-width" value="Envoyer" />
                     </div>
     
                     </fieldset>
-                </form>
-
-
-
-
-
-
-
-                
-
-                <!-- contact-warning -->
-                <div class="message-warning">
-                    Something went wrong. Please try again.
-                </div> 
-            
-                <!-- contact-success -->
-                <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div>
-                        
+                </form>          
             </div>
+
+
             <div class="col-four ">
                 <h4 class="h06">téléphone</h4>
                 <p>Téléphone: (+33)<?php echo $ligne_utilisateur['telephone'];?><br>Telephone: (+33)783135863</p>

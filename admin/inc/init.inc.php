@@ -25,6 +25,6 @@ $page = ''; // contiendra le nom de la page en cours de visite (menu surbrillanc
 $contenu = ''; // contenu nous permettra ponctuellemnt de stocker du contenu à afficher.
 
 
-// CHEMINS
+/*// CHEMINS
 define('RACINE_SITE', $_SERVER['DOCUMENT_ROOT'] . '/github/Sara_site_CV/');
-define('URL', 'http://localhost/github/Sara_site_CV/');
+define('URL', 'http://localhost/github/Sara_site_CV/');*/

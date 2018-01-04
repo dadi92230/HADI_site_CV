@@ -1,8 +1,7 @@
 <?php 
 
 class Contact{
-
-
+    
 private $co_nom;    
 private $co_email;
 private $co_sujet;
@@ -11,7 +10,6 @@ private $co_message;
 // fonction d'insertion dans la BDD
     public function insertContact($co_nom, $co_email, $co_sujet, $co_message){
 
-
     // on récupère les données rentrées par l'utilisateur
     $this->co_nom = strip_tags($co_nom);
     $this->co_email = strip_tags($co_email);
@@ -19,7 +17,7 @@ private $co_message;
     $this->co_message = strip_tags($co_message);
 
     // on requiert le fichier connexion.php qui contient l'accès à la BDD
-        require('../admin/inc/init.inc.php');
+        require('init.inc.php');
 
          // on crée une requête puis on l'exécute
         $req = $pdo->prepare('INSERT INTO t_commentaires (co_nom, co_email, co_sujet, co_message) VALUES (:co_nom, :co_email, :co_sujet, :co_message)');
@@ -30,22 +28,11 @@ private $co_message;
             ':co_sujet' => $this->co_sujet,
             ':co_message' => $this->co_message]);
 
-
-        echo 'bonjour';
         // on ferme la requête pour protéger des injections
         $req->closeCursor();
 
     }/*fin  public function insertContact */
 
-
 }
-
-
-
-
-
-
-
-
 
  ?>

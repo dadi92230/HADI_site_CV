@@ -30,7 +30,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
-                <li><a class="active" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" href="../public">Accéder au site<span class="sr-only">(current)</span></a></li>
+                <li><a class="active" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" href="../index.php">Accéder au site<span class="sr-only">(current)</span></a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off" aria-hidden="true"></span><span class="caret"></span></a>

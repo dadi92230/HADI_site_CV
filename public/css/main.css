@@ -1730,7 +1730,10 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     min-height: 786px;
     background-color: transparent;
     position: relative;
-    display: table;
+    display: table;    background-image: url(../images/f4a40c15.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center;
 }
 
 .s-home .shadow-overlay {

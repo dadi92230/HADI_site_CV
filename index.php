@@ -50,6 +50,8 @@ if (!empty($_POST)) {
     <meta charset="utf-8">
     <title>Hadi-SMAIL</title>
     <meta name="description" content="">
+    <META NAME="keywords" CONTENT="Je m’appelle Hadi Smail, je suis développeur intégrateur depuis  plus d'un an , J'ai  suivi une formation de niveau BAC +2 reconnue RNCP à l’école 3W Academy  qui a duré 3 mois, puis par la suite pour me perfectionner j'ai suivi une autre formation de 10 mois au PoleS  qui m'a permis de solidifier mes compétences.
+                Je suis actuellement  a la recherche d'un poste de développeur."> 
     <meta name="author" content="">
 
     <!-- mobile specific metas
@@ -167,7 +169,7 @@ if (!empty($_POST)) {
             <div class="col-full text-center">
                 <h3 class="title-color">À PROPOS DE MOI</h3>
                 <!-- <h1>presentation</h1> -->
-                <p class="present">je m’appelle Hadi Smail, je suis développeur intégrateur depuis  plus d'un an , J'ai  suivi une formation de niveau BAC +2 reconnue RNCP à l’école 3W Academy  qui a duré 3 mois, puis par la suite pour me perfectionner j'ai suivi une autre formation de 10 mois au PoleS  qui m'a permis de solidifier mes compétences.
+                <p class="present">Je m’appelle Hadi Smail, je suis développeur intégrateur depuis  plus d'un an , J'ai  suivi une formation de niveau BAC +2 reconnue RNCP à l’école 3W Academy  qui a duré 3 mois, puis par la suite pour me perfectionner j'ai suivi une autre formation de 10 mois au PoleS  qui m'a permis de solidifier mes compétences.
                 Je suis actuellement  a la recherche d'un poste de développeur.  </p>
             </div>
         </div>
@@ -202,7 +204,7 @@ if (!empty($_POST)) {
         <div class="row about-content about-content--buttons">
 
             <div class="col-six tab-full left">
-                <a href="public/CV Hadi Smail.pdf" class="btn btn--primary full-width">TÉLÉCHARGER MON CV</a>
+                <a href="public/CV Hadi Smail.pdf"  download="CV hadi smail" class="btn btn--primary full-width">TÉLÉCHARGER MON CV</a>
             </div>
             <div class="col-six tab-full right">
                 <a href="#contact" class="smoothscroll btn btn--primary full-width">ENGAGEZ-MOI MAINTENANT</a>
@@ -228,7 +230,7 @@ if (!empty($_POST)) {
                 //<!-- boucle d\'experiences -->
                   while ($ligne_experience = $resultat -> fetch()) { 
                     
-                             $tab_xp[$i%2].='<div class="timeline__block"><div class="timeline__bullet"></div><div class="timeline__header"><p class="timeline__timeframe">' . $ligne_experience['e_dates'] . '</p><h3>'. $ligne_experience['e_titre'].'</h3><h5>'. $ligne_experience['e_soustitre'].'</h5></div><div class="timeline__desc"><p>'. $ligne_experience['e_description'].'</p></div></div>'; 
+                             $tab_xp[$i%1].='<div class="timeline__block"><div class="timeline__bullet"></div><div class="timeline__header"><p class="timeline__timeframe">' . $ligne_experience['e_dates'] . '</p><h3>'. $ligne_experience['e_titre'].'</h3><h5>'. $ligne_experience['e_soustitre'].'</h5></div><div class="timeline__desc"><p>'. $ligne_experience['e_description'].'</p></div></div>'; 
                            
                             
                         
@@ -263,7 +265,7 @@ if (!empty($_POST)) {
 
                     while ($ligne_experience = $resultat -> fetch()) { 
                     
-                    $tab_xp[$i%2].='<div class="timeline__block"><div class="timeline__bullet"></div><div class="timeline__header"><p class="timeline__timeframe">' . $ligne_experience['f_dates'] . '</p><h3>'. $ligne_experience['f_titre'].'</h3><h5>'. $ligne_experience['f_soustitre'].'</h5></div><div class="timeline__desc"><p>'. $ligne_experience['f_description'].'</p></div></div>'; 
+                    $tab_xp[$i%1].='<div class="timeline__block"><div class="timeline__bullet"></div><div class="timeline__header"><p class="timeline__timeframe">' . $ligne_experience['f_dates'] . '</p><h3>'. $ligne_experience['f_titre'].'</h3><h5>'. $ligne_experience['f_soustitre'].'</h5></div><div class="timeline__desc"><p>'. $ligne_experience['f_description'].'</p></div></div>'; 
                            
                             
                         

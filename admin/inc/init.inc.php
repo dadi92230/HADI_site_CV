@@ -3,7 +3,6 @@
 session_start();
 
 
-
 $hote='localhost';
 $bdd ='hadi_site_cv';
 $utilisateur='root';

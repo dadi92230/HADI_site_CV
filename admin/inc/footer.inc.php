@@ -7,7 +7,7 @@
 			Print("Nous sommes le $date, il est $heure");
 			?>
 		</p>
-    <p><a href="../public/index.php">Mon site</a></p>
+    <p><a href="../index.php">Mon site</a></p>
   </div>
 </footer>
 

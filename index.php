@@ -186,7 +186,8 @@ if (!empty($_POST)) {
                 $resultat = $pdo -> prepare("SELECT * FROM t_competences WHERE utilisateur_id ='1'");
                 $resultat->execute();
 
-                /*$ligne_competence = $resultat -> fetch();*/
+                /*$
+                ligne_competence = $resultat -> fetch();*/
                 ?>
                 <?php while ($ligne_competence = $resultat -> fetch()) { ?>
                                                 
